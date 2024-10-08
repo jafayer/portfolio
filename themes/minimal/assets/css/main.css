@@ -1,0 +1,113 @@
+:root {
+  /* Light mode variables */
+  --background: #fff;
+  --primary-text-color: #222;
+  --secondary-text-color: #666;
+  --primary-color: #8a2be2;
+}
+
+
+
+body {
+  color: var(--primary-text-color);
+  background-color: var(--background);
+  font-family: sans-serif;
+  line-height: 1.5;
+  margin: 1rem;
+  width: 768px;
+  max-width: 80%;
+  font-family: "Ubuntu", sans-serif;
+  margin: 2rem auto;
+}
+
+header {
+  border-bottom: 1px solid var(--primary-text-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+header .title {
+  font-size: 1.2rem;
+}
+
+header nav ul {
+  list-style-type: none;
+  margin: 10px auto;
+  padding: 0;
+}
+
+header nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+footer {
+  border-top: 1px solid var(--primary-text-color);
+  margin-top: 1rem;
+}
+
+time {
+  color: var(--secondary-text-color);
+  font-size: 0.8rem;
+}
+
+a {
+  /* color: #00e; */
+  text-decoration: none;
+  /* nice purple color */
+  color: var(--primary-color);
+}
+
+img {
+  width: 600px;
+  max-width: 100%;
+  display: block;
+  margin: auto;
+}
+
+.image-container {
+  display: block;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.image-container img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.image-caption {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--secondary-text-color);
+  font-style: italic;
+  max-width: 350px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+  body {
+    margin: 2rem auto;
+  }
+
+  header {
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+
+  header .title {
+    padding-left: 10px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark mode variables */
+    --background: #222;
+    --primary-text-color: #fff;
+    --secondary-text-color: #ccc;
+    --primary-color: #ff78ff;
+  }
+}

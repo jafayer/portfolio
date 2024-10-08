@@ -1,0 +1,9 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  {{ range .Pages }}
+    <h2 style="margin-bottom: 0"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+    <p style="margin-top: 0">{{.Date | time.Format ":date_medium"}}</p>
+    {{ .Summary }}
+  {{ end }}
+{{ end }}

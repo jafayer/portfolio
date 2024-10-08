@@ -1,0 +1,5 @@
+<!-- layouts/_default/_markup/render-image/image.html -->
+<div class="image-container">
+  <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" title="{{ .Text }}"/>
+  <div class="image-caption">{{ .Text }}</div>
+</div>

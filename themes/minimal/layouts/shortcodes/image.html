@@ -1,0 +1,7 @@
+{{- $width := .Get "width" | default "100%" -}}
+{{- $alt := .Get "alt" -}}
+{{- $src := .Get "src" -}}
+<div class="image-container">
+  <img src="{{ $src | safeURL }}" alt="{{ $alt }}" title="{{ $alt }}" {{ if $width }}style="width: {{$width}}"{{ end }} />
+  <div class="image-caption">{{ $alt }}</div>
+</div>
