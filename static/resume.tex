@@ -1,0 +1,163 @@
+\documentclass[letterpaper,10pt]{article}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+\usepackage{datetime}
+\usepackage{hang}
+\usepackage[stretch=10,shrink=10,protrusion=true]{microtype}
+\usepackage{fontspec}
+
+\hyphenpenalty=10000
+\tolerance=1000
+
+
+% Change default font to Ubuntu
+\setmainfont{Ubuntu}
+% change default font sizes
+\renewcommand{\normalsize}{\fontsize{10}{10}\selectfont}
+
+% Formatting section headings
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+\titleformat{\subsection}{\bfseries}{}{0em}{}
+
+% reduce default spacing between sections
+\titlespacing{\section}{0pt}{1.0em}{0.6em}
+\titlespacing{\subsection}{0pt}{0.5em}{0.5em}
+
+\newdateformat{monthyear}{\monthname[\THEMONTH] \THEYEAR}
+
+% Remove page numbering
+\pagenumbering{gobble}
+
+% Define a new command for job entries with dynamic bullet points
+\NewDocumentCommand{\jobentry}{m m m m m m +m}{
+    \subsection[#1]{#2\hfill #4}
+    \vspace{-0.4em}
+    \noindent\textit{#3} \\
+    \noindent Technologies: #5 \\
+    \vspace{-0.5em}
+    \begin{itemize}
+        \setlength{\itemsep}{0.4em}
+        #6
+    \end{itemize}
+    \vspace{0.5em}
+}
+
+% Reducing space between items in lists
+\setlist{nosep}
+
+\begin{document}
+
+\begin{center}
+    {\huge\textbf{Josh Fayer}} \\
+        \href{https://joshuafayer.com}{joshuafayer.com} \quad
+        \href{mailto:contact@fayer.me}{contact@fayer.me} \quad
+        \href{https://linkedin.com/in/joshuafayer}{/in/joshuafayer} \quad (609) 619-1323 \\
+        \emph{Updated: \monthyear\today}
+\end{center}
+
+\vspace{0.1cm}
+
+\section*{EDUCATION}
+\noindent\textbf{Syracuse University, Public Relations, B.S.} \hfill 2016 -- 2020 \\
+\emph{Minors: Computer Science, Political Science} \\
+GPA: 3.7, \emph{magna cum laude}
+
+\section*{SKILLS}
+\noindent\textbf{Languages:} TypeScript, Python, Golang, Shell \\
+\noindent\textbf{Full-Stack Development:} Node.js, React.js, Docker, Git \\
+\noindent\textbf{Data Pipelines:} SQL, BigQuery, MongoDB, Elasticsearch, TensorFlow, PyTorch, Prompt Engineering \\
+\textbf{Cloud Infrastructure:} GCP, Kubernetes, Terraform
+
+\section*{EXPERIENCE}
+
+\jobentry
+    {cdns2}
+    {Data \& Software Engineer}
+    {CleanDNS}
+    {04/2024-present}
+    {Go, Python, PyTorch, LLMs, TypeScript, Kubernetes, Docker, GCP, SQL, BigQuery, MongoDB}
+    {
+        \item Developed scalable DNS sinkhole product that handles more than 90 million requests per day.
+        \item Overhauled abuse processing pipeline to achieve >85\% accuracy in detecting phishing content.
+        \item Built data pipelines and one-off reports in Python, SQL, shell, Elastic, and BigQuery.
+        \item Contributed to refactors improve schematization, consistency, performance, and scalability.
+    }
+
+\jobentry
+    {cdns1}
+    {Junior Software Engineer}
+    {CleanDNS}
+    {10/2023-04/2024}
+    {React.js, TypeScript, Node.js, MongoDB, Docker, GCP}
+    {
+        \item Developed dozens of React components for the CleanDNS frontend.
+        \item Developed TypeScript and Python back-end services and integrations with client APIs.
+        \item Led effort to improve CI/CD experience through unit testing and deployment automations.
+        \item Delivered several automation and analytical concepts to improve efficiency and robustness of the CleanDNS data model, such as algorithms for comparing phishing page HTML structure.
+        \item Rearchitected core business ETL pipeline to improve performance and extensibility.
+        \item Promoted to Data Engineer in April 2024.
+    }
+
+\jobentry
+    {bs1}
+    {Technology Manager \& Software Engineer}
+    {Break Something}
+    {10/2021-10/2023}
+    {React.js, Node.js, TypeScript, Next.js, SQL, Python, Django, Docker, GCP, Chrome extensions}
+    {
+        \item Coded and maintained web and cloud applications, including a TypeScript chrome extension, several React-based internal tools, and scalable Python and JavaScript serverless functions.
+        \item Managed BI pipeline including building reports in Google Looker Studio, auditing internal data pipeline, and running analyses in SQL.
+        \item Built and deployed full-stack product with Python, Django, and MySQL.
+        \item Project managed, built and maintained 14 client websites and other front-end web content.
+    }
+
+\section*{PROJECTS}
+
+\subsection*{DinoDNS - \href{https://github.com/jafayer/dinodns}{\small{github.com/jafayer/dinodns}}}
+\noindent Technologies: TypeScript \\
+
+\begin{itemize}
+    \item Designed and built an Express-inspired DNS server framework in TypeScript.
+\end{itemize}
+
+
+% \subsection*{Digital Strategist \hfill 07/2020 -- 10/2021}
+% \textit{Break Something | Remote}
+% \begin{itemize}
+%     \item Wrote, built, and edited hundreds of fundraising and engagement HTML emails for client programs.
+%     \item Designed graphics, landing pages, and other creative assets.
+%     \item Managed clients' social media presence and conducted social listening.
+% \end{itemize}
+
+% \subsection*{Language Transfer - \href{https://github.com/language-transfer}{\small{https://github.com/language-transfer}} \hfill 05/2022 -- 01/2024}
+% Technologies: React Native, TypeScript, JavaScript, Xcode, Testflight
+% \begin{itemize}
+%     \item Served as lead maintainer for iOS version of an open source language learning mobile app.
+%     \item Developed new features, issued bug fixes, managed iOS deployment cycle.
+% \end{itemize}
+
+% \subsection*{Link Shortener \& CLI \hfill }
+% \href{https://fayer.me/short}{fayer.me/short} \\
+% Technologies: Golang, JavaScript, AWS Lambda, AWS DynamoDB, AWS API Gateway
+% \begin{itemize}
+%     \item Built an AWS-based link shortener in JavaScript for my \href{https://fayer.me}{fayer.me} links and a command line interface in Golang to handle CRUD methods and manage the service.
+% \end{itemize}
+
+% \subsection*{Nf6.io \hfill }
+% \href{https://fayer.me/nf6}{fayer.me/nf6} \\
+% Technologies: Node.js, Express, React, SQLite, Cheerio, JavaScript
+% \begin{itemize}
+%     \item Wrote a full-stack web app to generate customized art based on chess games.
+% \end{itemize}
+
+% \subsection*{Election Data Explorer \hfill }
+% \href{https://fayer.me/election}{fayer.me/election} \\
+% Technologies: Next.js, React, Recharts, JavaScript, API design
+% \begin{itemize}
+%     \item Built a Next.js site that aggregates and visualizes polling and financial data for every 2022 federal election.
+% \end{itemize}
+
+\end{document}

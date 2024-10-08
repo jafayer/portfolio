@@ -11,3 +11,8 @@ hugo.linux
 
 # Temporary lock file while building
 /.hugo_build.lock
+
+# Resume build files
+resume.*
+!resume.pdf
+!resume.tex
