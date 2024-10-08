@@ -1,7 +1,6 @@
-name = 'Theme name'
+name = 'Minimal'
 license = 'MIT'
-licenselink = 'https://github.com/owner/repo/LICENSE'
-description = 'Theme description'
+description = 'A minimal Hugo theme'
 
 # The home page of the theme, where the source can be found
 homepage = 'https://github.com/owner/repo'
